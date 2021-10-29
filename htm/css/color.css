@@ -1,0 +1,53 @@
+.warp {
+	padding: 100px 0;
+}
+
+.warp .container{
+	display: flex;
+}
+/*色票列*/
+.colorc_ode-list{
+	width: calc(100% - 450px);
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/*色票*/
+.colors{
+	width: 20%;
+	margin-bottom: 20px;
+	background-color: #D4CBCB;
+}
+
+.colors a{
+	font-size: 10px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: #000;
+}
+
+.colors .info,
+.colors .number,
+.colors .name{
+	width: 100%;
+	padding-left: 5px;
+	display: block;
+}
+.colors .name{
+	font-size: 16px;
+	color: #7C3636;
+}
+
+.color_code{
+	width: 90px;
+	height: 40px;
+	background-color: #B73D3D;
+}
+
+/*色票資訊*/
+.color_info{
+	width: 450px;
+	height: 100px;
+	background-color:#D05F5F ;
+}
