@@ -14,16 +14,16 @@
 
 /*卷軸寬度*/
 .colorc_ode-list::-webkit-scrollbar {
-    width: 5px;
+    padding-left: 5px;
+    width: 10px;
 }
 
 /*卷軸背景色*/
-.colorc_ode-list::-webkit--scrollbar-thumb {
-    background-color: #C4C4C4;
+.colorc_ode-list::-webkit-scrollbar-thumb {
+    background-color: #ffffff4d;
+    border-radius: 2px;
 }
-.colorc_ode-list::-webkit-scrollbar-button{
-  background: #fff;
-}
+
 
 /*=======================================顏色列表===========================================*/
 .colorc_ode-list {
@@ -32,13 +32,13 @@
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
+    font-weight: bold;
 }
 
 /*顏色*/
 .colors {
     width: 20%;
     margin-bottom: 20px;
-    background-color: #D4CBCB;
 }
 
 .colors a {
