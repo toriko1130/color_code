@@ -1,53 +1,230 @@
 .warp {
-	padding: 100px 0;
+    padding: 100px 0;
+    background-image: url(../../dist/img/bg.png);
+    background-color: rgb(144 127 113);
 }
 
-.warp .container{
-	display: flex;
-}
-/*色票列*/
-.colorc_ode-list{
-	width: calc(100% - 450px);
-	display: flex;
-	flex-wrap: wrap;
+.warp .container {
+    display: flex;
+    align-items: center;
 }
 
-/*色票*/
-.colors{
-	width: 20%;
-	margin-bottom: 20px;
-	background-color: #D4CBCB;
+
+/*=======================================卷軸===========================================*/
+
+/*卷軸寬度*/
+.colorc_ode-list::-webkit-scrollbar {
+    width: 5px;
 }
 
-.colors a{
-	font-size: 10px;
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-	color: #000;
+/*卷軸背景色*/
+.colorc_ode-list::-webkit--scrollbar-thumb {
+    background-color: #C4C4C4;
+}
+.colorc_ode-list::-webkit-scrollbar-button{
+  background: #fff;
 }
 
-.colors .info,
-.colors .number,
-.colors .name{
-	width: 100%;
-	padding-left: 5px;
-	display: block;
-}
-.colors .name{
-	font-size: 16px;
-	color: #7C3636;
+/*=======================================顏色列表===========================================*/
+.colorc_ode-list {
+    width: calc(100% - 450px);
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
 }
 
-.color_code{
-	width: 90px;
-	height: 40px;
-	background-color: #B73D3D;
+/*顏色*/
+.colors {
+    width: 20%;
+    margin-bottom: 20px;
+    background-color: #D4CBCB;
+}
+
+.colors a {
+    font-size: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #000;
 }
 
 /*色票資訊*/
-.color_info{
-	width: 450px;
-	height: 100px;
-	background-color:#D05F5F ;
+.colors .info,
+.colors .number,
+.colors .name {
+    width: 100%;
+    padding-left: 5px;
+    display: block;
+}
+
+.colors .name {
+    font-size: 16px;
+    color: #7C3636;
+}
+
+/*色票*/
+.color_code {
+    width: 90px;
+    height: 40px;
+    background-color: #B73D3D;
+}
+
+/*========================================顏色資訊==========================================*/
+.color_info {
+    width: 450px;
+    padding-left: 20px;
+}
+
+/*顏色名*/
+.color-name .name {
+    font-size: 38px;
+}
+
+/*顏色英文名*/
+.color-name .name-en {
+    font-size: 28px;
+}
+
+/*資訊區*/
+.cmyk,
+.rgb,
+.HEX,
+.active {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.rgb .value{
+    width: 50px;
+    border-bottom: 1px solid #ffffff;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.HEX>div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.HEX span {
+    width: 100%;
+}
+
+.HEX .value {
+    margin-right: 20px;
+}
+
+.HEX button {
+    width: 80px;
+    height: 32px;
+    padding: 0px 12px;
+    background-color: #898989;
+    border: 1px solid #949494;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/*圓環圖*/
+.chart {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    line-height: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/*圓環圖淺*/
+.chart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #E0E0E0;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/*圓環圖深*/
+.chart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #7F95E0;
+    border-radius: 50%;
+    clip: rect(0, auto, auto, 25px);
+    z-index: 2;
+}
+
+/*圓環圖進度*/
+.chart .chart-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #5E55A2;
+    border-radius: 50%;
+    clip: rect(0, auto, auto, 25px);
+    z-index: 3;
+}
+
+/*偽數值*/
+.c2 .chart-progress {
+    border-color: #E0E0E0;
+    -webkit-transform: rotate(7.2deg);
+    -ms-transform: rotate(7.2deg);
+    transform: rotate(7.2deg);
+}
+
+.c33 .chart-progress {
+    border-color: #E0E0E0;
+    -webkit-transform: rotate(118.8deg);
+    -ms-transform: rotate(118.8deg);
+    transform: rotate(118.8deg);
+}
+
+.c50 .chart-progress {
+    border-color: transparent;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.c75 .chart-progress {
+    border-color: #7F95E0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/*值*/
+.value {
+    height: 50px;
+    line-height: 50px;
+}
+
+.active button{
+	width: 120px;
+	height: 40px;
+	border-radius: 3px;
+	border:1px solid #80766e;
+	background-color:#80766e;
+    color:#ffffff;
+}
+
+.other{
+	font-size: 10px;
+}
+
+.other a{
+    color: #e9ddb6;
 }
