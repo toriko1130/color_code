@@ -117,6 +117,12 @@ console.log(initialColor,initialColor[0].colorName,"initialColor");
 // 讀取色票資訊
 function loadcolorCode(){
 
+	var colorName = 0;
+	var colorHex = 1;
+	var obj
+
+	console.log(colorName,colorHex);
+
 	for (var i = 0; i < colorCode.length; i++)addCodeList(colorCode[i],i);
 
 }
@@ -127,7 +133,7 @@ function addCodeList(obj,num){
 
 	var html_str =
 
-	'<div class="colors">' +
+	'<div class="colors" data-colorName="' + obj.colorName + '" data-colorHex="' + obj.colorHex + '"data-rgb="rgb(' + obj.rgbR + ',' + obj.rgbG + ',' + obj.rgbB + ')" data-cmyk="cmyk(' + obj.cmykC + ',' + obj.cmykM + ',' + obj.cmykY + ',' + obj.cmykC + ')">' +
 		'<a href="#">' +
 			'<div class="color_code" style="background-color:' + obj.colorHex + '"></div>' +
 			'<div class="info">' +
