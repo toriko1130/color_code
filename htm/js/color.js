@@ -1,3 +1,16 @@
+var initialColor = [
+	{
+		colorName:"傳統色彩",
+		colorHex:"#ffffff",
+		rgbR:"255",
+		rgbG:"255",
+		rgbB:"255",
+		cmykC:"0",
+		cmykM:"0",
+		cmykY:"0",
+		cmykK:"0"
+	}
+];
 var colorCode = [
 	{
 		colorName:"玉紅",
@@ -44,6 +57,28 @@ var colorCode = [
 		cmykK:"0"
 	},
 	{
+		colorName:"卵石紫",
+		colorHex:"#30161c",
+		rgbR:"48",
+		rgbG:"22",
+		rgbB:"28",
+		cmykC:"52",
+		cmykM:"88",
+		cmykY:"58",
+		cmykK:"81"
+	},
+	{
+		colorName:"瓦罐灰",
+		colorHex:"#47484c",
+		rgbR:"67",
+		rgbG:"57",
+		rgbB:"49",
+		cmykC:"49",
+		cmykM:"71",
+		cmykY:"72",
+		cmykK:"76"
+	},
+	{
 		colorName:"淡蓝紫",
 		colorHex:"#a7a8bd",
 		rgbR:"167",
@@ -61,28 +96,34 @@ var colorCode = [
 /*  =====================  init  ========================  */
 $(document).ready(function() {
 
-$(".colorc_ode-list").empty();
+	$(".colorc_ode-list").empty();
+
+
+	loadcolorCode();
 
 
 
+console.log(initialColor,initialColor[0].colorName,"initialColor");
 
-	console.log("AAA");
 
-	for (var i = 0; i < colorCode.length; i++)addCodeList(colorCode[i],i);
-
-	console.log("BBB-02","CCC-03");
 
 
 });
 
 
+/*  =====================  function  ========================  */
+
+
+// 讀取色票資訊
+function loadcolorCode(){
+
+	for (var i = 0; i < colorCode.length; i++)addCodeList(colorCode[i],i);
+
+}
+
+
+//添加色票字串
 function addCodeList(obj,num){
-
-
-
-
-	console.log("addCodeList裡面Num",obj,num);
-
 
 	var html_str =
 
@@ -91,12 +132,14 @@ function addCodeList(obj,num){
 			'<div class="color_code" style="background-color:' + obj.colorHex + '"></div>' +
 			'<div class="info">' +
 				'<span class="number">' + '00' + (num + 1) + '</span>' +
-				'<span class="name">'+ obj.colorName +'</span>' +
+				'<span class="name" style="color:' + obj.colorHex + '">'+ obj.colorName +'</span>' +
 			'</div>' +
 		'</a>' +
 	'</div>';
 
-console.log(obj.colorName,"colorName_001");
-
 	$(".colorc_ode-list").append(html_str);
+
 }
+
+
+//添加色票字串
