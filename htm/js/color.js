@@ -115,20 +115,20 @@ console.log(initialColor,initialColor[0].colorName,"initialColor");
 
 
 // 讀取色票資訊
-function loadcolorCode(){
+function loadcolorCode(obj,){
 
-	var colorName = 0;
-	var colorHex = 1;
-	var obj
+	// var colorName = colorName;
+	// var colorHex = initialColor[0].colorHex;
+	// var rgb = initialColor[0]
 
-	console.log(colorName,colorHex);
+	console.log(colorName,colorHex,"loadcolorCode");
 
 	for (var i = 0; i < colorCode.length; i++)addCodeList(colorCode[i],i);
 
 }
 
 
-//添加色票字串
+//製作色票字串
 function addCodeList(obj,num){
 
 	var html_str =
