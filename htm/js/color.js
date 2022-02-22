@@ -96,17 +96,10 @@ var colorCode = [
 /*  =====================  init  ========================  */
 $(document).ready(function() {
 
-	$(".colorc_ode-list").empty();
+	/*清空色票List*/
+	$(".color_code-list").empty();
 
-
-	loadcolorCode();
-
-
-
-console.log(initialColor,initialColor[0].colorName,"initialColor");
-
-
-
+loadcolorCode();
 
 });
 
@@ -114,14 +107,15 @@ console.log(initialColor,initialColor[0].colorName,"initialColor");
 /*  =====================  function  ========================  */
 
 
+
 // 讀取色票資訊
-function loadcolorCode(obj,){
+function loadcolorCode(obj){
 
-	// var colorName = colorName;
-	// var colorHex = initialColor[0].colorHex;
-	// var rgb = initialColor[0]
+	// var colorName = colorCode[0].colorName;
+	// var colorHex = colorCode[0].colorHex;
+	// var rgb = colorCode[0]
 
-	console.log(colorName,colorHex,"loadcolorCode");
+	// console.log(colorName,colorHex,rgb,"loadcolorCode");
 
 	for (var i = 0; i < colorCode.length; i++)addCodeList(colorCode[i],i);
 
@@ -143,7 +137,7 @@ function addCodeList(obj,num){
 		'</a>' +
 	'</div>';
 
-	$(".colorc_ode-list").append(html_str);
+	$(".color_code-list").append(html_str);
 
 }
 
