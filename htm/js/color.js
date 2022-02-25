@@ -97,9 +97,27 @@ var colorCode = [
 $(document).ready(function() {
 
 	/*清空色票List*/
-	$(".color_code-list").empty();
+	// $(".color_code-list").empty();
 
-loadcolorCode();
+	$(".color_code-list").on('click','.colors',function(event) {
+
+		var target = $(this);
+
+		var obj = {
+			colorName:target.data('colorname'),
+			colorHex:target.data('colorhex'),
+			corlorRGB:target.data('rgb'),
+			corlorCMYK:target.data('cmyk'),
+		}
+
+
+		console.log(obj,"colorname");
+		console.log(obj.colorName,"colorname");
+
+
+	});
+
+	loadcolorCode();
 
 });
 
@@ -127,7 +145,7 @@ function addCodeList(obj,num){
 
 	var html_str =
 
-	'<div class="colors" data-colorName="' + obj.colorName + '" data-colorHex="' + obj.colorHex + '"data-rgb="rgb(' + obj.rgbR + ',' + obj.rgbG + ',' + obj.rgbB + ')" data-cmyk="cmyk(' + obj.cmykC + ',' + obj.cmykM + ',' + obj.cmykY + ',' + obj.cmykC + ')">' +
+	'<div class="colors" data-colorname="' + obj.colorName + '" data-colorhex="' + obj.colorHex + '"data-rgb="' + obj.rgbR + ',' + obj.rgbG + ',' + obj.rgbB + '" data-cmyk="' + obj.cmykC + ',' + obj.cmykM + ',' + obj.cmykY + ',' + obj.cmykC + '">' +
 		'<a href="#">' +
 			'<div class="color_code" style="background-color:' + obj.colorHex + '"></div>' +
 			'<div class="info">' +
