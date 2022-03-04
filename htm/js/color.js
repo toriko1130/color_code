@@ -1,4 +1,4 @@
-var initialColor = [
+var currentColor = [
 	{
 		colorName:"傳統色彩",
 		colorHex:"#ffffff",
@@ -11,6 +11,7 @@ var initialColor = [
 		cmykK:"0"
 	}
 ];
+var bgcolor = "#808080";
 var colorCode = [
 	{
 		colorName:"玉紅",
@@ -110,10 +111,28 @@ $(document).ready(function() {
 			corlorCMYK:target.data('cmyk'),
 		}
 
+		var cmyk_val = obj.corlorCMYK.split(",");
+		var cmykC = cmyk_val[0];
+		var cmykM = cmyk_val[1];
+		var cmykY = cmyk_val[2];
+		var cmykK = cmyk_val[3];
 
-		console.log(obj,"colorname");
-		console.log(obj.colorName,"colorname");
+		var NEW = currentColor.fill("test",0);
 
+		console.log(currentColor);
+		console.log(NEW);
+
+		// 替換顏色名字
+		$(".color_info .name").html(obj.colorName);
+		// 替換色碼
+		$(".color_info .HEX .value").html(obj.colorHex);
+		// 替換CMYK
+		$(".cmyk strong").eq(0).html(cmykC);
+		$(".cmyk strong").eq(1).html(cmykM);
+		$(".cmyk strong").eq(2).html(cmykY);
+		$(".cmyk strong").eq(3).html(cmykK);
+
+		bgColor();
 
 	});
 
@@ -160,4 +179,8 @@ function addCodeList(obj,num){
 }
 
 
-//添加色票字串
+//背景顏色替換
+function bgColor(){
+	$(".warp").css("background-color",bgcolor);
+	console.log("color");
+}
