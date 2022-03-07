@@ -11,7 +11,6 @@ var currentColor = [
 		cmykK:"0"
 	}
 ];
-var bgcolor = "#808080";
 var colorCode = [
 	{
 		colorName:"玉紅",
@@ -100,43 +99,17 @@ $(document).ready(function() {
 	/*清空色票List*/
 	// $(".color_code-list").empty();
 
+	loadcolorCode();
+
+
 	$(".color_code-list").on('click','.colors',function(event) {
 
 		var target = $(this);
 
-		var obj = {
-			colorName:target.data('colorname'),
-			colorHex:target.data('colorhex'),
-			corlorRGB:target.data('rgb'),
-			corlorCMYK:target.data('cmyk'),
-		}
-
-		var cmyk_val = obj.corlorCMYK.split(",");
-		var cmykC = cmyk_val[0];
-		var cmykM = cmyk_val[1];
-		var cmykY = cmyk_val[2];
-		var cmykK = cmyk_val[3];
-
-		var NEW = currentColor.fill("test",0);
-
-		console.log(currentColor);
-		console.log(NEW);
-
-		// 替換顏色名字
-		$(".color_info .name").html(obj.colorName);
-		// 替換色碼
-		$(".color_info .HEX .value").html(obj.colorHex);
-		// 替換CMYK
-		$(".cmyk strong").eq(0).html(cmykC);
-		$(".cmyk strong").eq(1).html(cmykM);
-		$(".cmyk strong").eq(2).html(cmykY);
-		$(".cmyk strong").eq(3).html(cmykK);
-
+		currentInfo(target);
 		bgColor();
 
 	});
-
-	loadcolorCode();
 
 });
 
@@ -144,20 +117,12 @@ $(document).ready(function() {
 /*  =====================  function  ========================  */
 
 
-
 // 讀取色票資訊
 function loadcolorCode(obj){
-
-	// var colorName = colorCode[0].colorName;
-	// var colorHex = colorCode[0].colorHex;
-	// var rgb = colorCode[0]
-
-	// console.log(colorName,colorHex,rgb,"loadcolorCode");
 
 	for (var i = 0; i < colorCode.length; i++)addCodeList(colorCode[i],i);
 
 }
-
 
 //製作色票字串
 function addCodeList(obj,num){
@@ -178,9 +143,66 @@ function addCodeList(obj,num){
 
 }
 
+//獲取當前色票色訊並替換
+function currentInfo(obj){
+
+	var info_obj = {
+		colorName:obj.data('colorname'),
+		colorHex:obj.data('colorhex'),
+		corlorRGB:obj.data('rgb'),
+		corlorCMYK:obj.data('cmyk'),
+	}
+
+	var cmyk_val = info_obj.corlorCMYK.split(",");
+	var cmykC = cmyk_val[0];
+	var cmykM = cmyk_val[1];
+	var cmykY = cmyk_val[2];
+	var cmykK = cmyk_val[3];
+
+	var rgb_val = info_obj.corlorRGB.split(",");
+	var rgbR = rgb_val[0];
+	var rgbG = rgb_val[1];
+	var rgbB = rgb_val[2];
+
+	currentColor[0].colorHex = info_obj.colorHex;
+
+	console.log(currentColor)
+
+	// 替換顏色名字
+	$(".color_info .name").html(info_obj.colorName);
+	// 替換色碼
+	$(".color_info .HEX .value").html(info_obj.colorHex);
+	// 替換CMYK
+	$(".cmyk strong").eq(0).html(cmykC);
+	$(".cmyk strong").eq(1).html(cmykM);
+	$(".cmyk strong").eq(2).html(cmykY);
+	$(".cmyk strong").eq(3).html(cmykK);
+	// 替換RGB
+	$(".rgb .value").eq(0).html(rgbR);
+	$(".rgb .value").eq(1).html(rgbG);
+	$(".rgb .value").eq(2).html(rgbB);
+
+// if (cmykC<) {}
+
+
+console.log(cmykC,"cmykC");
+
+
+
+}
+
+//圖表變化
+function chartChange(){
+
+
+
+
+}
+
 
 //背景顏色替換
 function bgColor(){
-	$(".warp").css("background-color",bgcolor);
-	console.log("color");
+
+	$(".warp").css("background-color",currentColor[0].colorHex);
+
 }

@@ -73,7 +73,12 @@
 /*========================================îÉ«ÙYÓ==========================================*/
 .color_info {
     width: 450px;
-    padding-left: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    margin-left: 15px;
+    background: rgba(255, 255, 255,0.25);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 /*îÉ«Ãû*/
