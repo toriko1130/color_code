@@ -73,7 +73,7 @@ var colorCode = [
 		rgbR:"67",
 		rgbG:"57",
 		rgbB:"49",
-		cmykC:"49",
+		cmykC:"0",
 		cmykM:"71",
 		cmykY:"72",
 		cmykK:"76"
@@ -182,7 +182,23 @@ function currentInfo(obj){
 	$(".rgb .value").eq(1).html(rgbG);
 	$(".rgb .value").eq(2).html(rgbB);
 
-// if (cmykC<) {}
+if (cmykC < 50 || cmykC != 0) {
+
+	var chart_val = cmykC * 3.6
+
+	$(".chart-progress").css({
+
+		"border-color": "#E0E0E0",
+		"transform": "rotate(" + chart_val + "deg)"
+	});
+
+	console.log(chart_val)
+
+}
+
+
+
+
 
 
 console.log(cmykC,"cmykC");
