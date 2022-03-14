@@ -18,7 +18,7 @@ var colorCode = [
 		rgbR:"192",
 		rgbG:"72",
 		rgbB:"81",
-		cmykC:"13",
+		cmykC:"98",
 		cmykM:"83",
 		cmykY:"62",
 		cmykK:"3"
@@ -29,7 +29,7 @@ var colorCode = [
 		rgbR:"122",
 		rgbG:"115",
 		rgbB:"116",
-		cmykC:"48",
+		cmykC:"75",
 		cmykM:"45",
 		cmykY:"40",
 		cmykK:"26"
@@ -51,7 +51,7 @@ var colorCode = [
 		rgbR:"81",
 		rgbG:"196",
 		rgbB:"211",
-		cmykC:"79",
+		cmykC:"50",
 		cmykM:"0",
 		cmykY:"27",
 		cmykK:"0"
@@ -182,7 +182,7 @@ function currentInfo(obj){
 	$(".rgb .value").eq(1).html(rgbG);
 	$(".rgb .value").eq(2).html(rgbB);
 
-if (cmykC < 50 || cmykC != 0) {
+if (cmykC != 0 && cmykC < 50) {
 
 	var chart_val = cmykC * 3.6
 
@@ -190,11 +190,51 @@ if (cmykC < 50 || cmykC != 0) {
 
 		"border-color": "#E0E0E0",
 		"transform": "rotate(" + chart_val + "deg)"
+
 	});
 
-	console.log(chart_val)
+	console.log(cmykC,chart_val,"小")
 
+}else if(cmykC > 50){
+
+	var chart_val = (cmykC - 50) * 3.6
+
+	$(".chart-progress").css({
+
+		"border-color": "#7F95E0",
+		"transform": "rotate(" + chart_val + "deg)"
+
+	});
+
+	console.log(cmykC,chart_val,"大")
+
+}else if(cmykC == 0){
+
+
+	$(".chart-progress").css({
+
+		"border-color": "#E0E0E0",
+		"transform": "rotate(0deg)"
+
+	});
+
+	console.log(cmykC,"零")
+
+}else if(cmykC == 50){
+
+
+	$(".chart-progress").css({
+
+		"border-color": "#E0E0E0",
+		"transform": "rotate(180deg)"
+
+	});
+
+	console.log(cmykC,"50")
 }
+
+
+
 
 
 
