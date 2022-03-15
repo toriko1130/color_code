@@ -166,8 +166,6 @@ function currentInfo(obj){
 
 	currentColor[0].colorHex = info_obj.colorHex;
 
-	console.log(currentColor)
-
 	// 替換顏色名字
 	$(".color_info .name").html(info_obj.colorName);
 	// 替換色碼
@@ -182,75 +180,78 @@ function currentInfo(obj){
 	$(".rgb .value").eq(1).html(rgbG);
 	$(".rgb .value").eq(2).html(rgbB);
 
-if (cmykC != 0 && cmykC < 50) {
-
-	var chart_val = cmykC * 3.6
-
-	$(".chart-progress").css({
-
-		"border-color": "#E0E0E0",
-		"transform": "rotate(" + chart_val + "deg)"
-
-	});
-
-	console.log(cmykC,chart_val,"小")
-
-}else if(cmykC > 50){
-
-	var chart_val = (cmykC - 50) * 3.6
-
-	$(".chart-progress").css({
-
-		"border-color": "#7F95E0",
-		"transform": "rotate(" + chart_val + "deg)"
-
-	});
-
-	console.log(cmykC,chart_val,"大")
-
-}else if(cmykC == 0){
 
 
-	$(".chart-progress").css({
 
-		"border-color": "#E0E0E0",
-		"transform": "rotate(0deg)"
+for (var i = 0; i < $(".chart-progress").length; i++) {
 
-	});
+chartChange(cmyk_val[i],i);
 
-	console.log(cmykC,"零")
-
-}else if(cmykC == 50){
+console.log(i)
 
 
-	$(".chart-progress").css({
-
-		"border-color": "#E0E0E0",
-		"transform": "rotate(180deg)"
-
-	});
-
-	console.log(cmykC,"50")
 }
 
 
 
-
-
-
-
-
-
-console.log(cmykC,"cmykC");
 
 
 
 }
 
 //圖表變化
-function chartChange(){
+function chartChange(cmykC,val){
+
+	if (cmykC != 0 && cmykC < 50) {
+
+		var chart_val = cmykC * 3.6
+
+		$(".chart-progress").eq(val).css({
+
+			"border-color": "#E0E0E0",
+			"transform": "rotate(" + chart_val + "deg)",
+
+		});
+
+		console.log(val, "小於50")
+
+	}else if(cmykC > 50){
+
+		var chart_val = (cmykC - 50) * 3.6
+
+		$(".chart-progress").eq(val).css({
+
+			"border-color": "#7F95E0",
+			"transform": "rotate(" + chart_val + "deg)"
+
+		});
+
+		console.log(val, "大於50")
 
 
+	}else if(cmykC == 0){
+
+		$(".chart-progress").eq(val).css({
+
+			"border-color": "#E0E0E0",
+			"transform": "rotate(0deg)"
+
+		});
+
+		console.log(val, "等於0")
+
+	}else if(cmykC == 50){
+
+		$(".chart-progress").eq(val).css({
+
+			"border-color": "#E0E0E0",
+			"transform": "rotate(180deg)"
+
+		});
+
+		console.log(val, "等於50")
+
+	}
 
 
 }
