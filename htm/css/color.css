@@ -9,7 +9,6 @@
     align-items: center;
 }
 
-
 /*=======================================卷軸===========================================*/
 
 /*卷軸寬度*/
@@ -23,7 +22,6 @@
     background-color: #ffffff4d;
     border-radius: 2px;
 }
-
 
 /*=======================================顏色列表===========================================*/
 .color_code-list {
@@ -76,7 +74,7 @@
     padding: 20px;
     border-radius: 4px;
     margin-left: 15px;
-    background: rgba(255, 255, 255,0.25);
+    background: rgba(255, 255, 255,0.45);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
@@ -98,11 +96,14 @@
 }
 
 .rgb .value,.HEX .value{
-    min-width: 50px;
+    min-width: 60px;
     border-bottom: 1px solid #ffffff;
     padding: 0 12px;
     margin-right: 15px;
     text-align: center;
+    background-color: #00000033;
+    border-radius: 4px;
+    color: #ffffff;
 }
 
 .HEX>div {
@@ -117,6 +118,7 @@
 
 .HEX .value {
     margin-right: 20px;
+    min-width: 100px;
 }
 
 .HEX button {
@@ -174,39 +176,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 3px solid #5E55A2;
+    border: 3px solid #7F95E0;
     border-radius: 50%;
     clip: rect(0, auto, auto, 25px);
     z-index: 3;
-}
-
-/*偽數值*/
-.c2 .chart-progress {
-    border-color: #E0E0E0;
-    -webkit-transform: rotate(7.2deg);
-    -ms-transform: rotate(7.2deg);
-    transform: rotate(7.2deg);
-}
-
-.c33 .chart-progress {
-    border-color: #E0E0E0;
-    -webkit-transform: rotate(118.8deg);
-    -ms-transform: rotate(118.8deg);
-    transform: rotate(118.8deg);
-}
-
-.c50 .chart-progress {
-    border-color: transparent;
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
-.c75 .chart-progress {
-    border-color: #7F95E0;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
 }
 
 /*值*/

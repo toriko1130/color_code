@@ -96,11 +96,8 @@ var colorCode = [
 /*  =====================  init  ========================  */
 $(document).ready(function() {
 
-	/*清空色票List*/
-	// $(".color_code-list").empty();
 
 	loadcolorCode();
-
 
 	$(".color_code-list").on('click','.colors',function(event) {
 
@@ -109,6 +106,10 @@ $(document).ready(function() {
 		currentInfo(target);
 		bgColor();
 
+	});
+
+	$(".copy_btn").click(function() {
+		copyVal();
 	});
 
 });
@@ -221,7 +222,7 @@ function chartChange(cmykC,val){
 
 		$(".chart-progress").eq(val).css({
 
-			"border-color": "#7F95E0",
+			"border-color": currentColor[0].colorHex,
 			"transform": "rotate(" + chart_val + "deg)"
 
 		});
@@ -253,13 +254,33 @@ function chartChange(cmykC,val){
 
 	}
 
-
 }
-
 
 //背景顏色替換
 function bgColor(){
 
 	$(".warp").css("background-color",currentColor[0].colorHex);
+
+}
+
+// 一鍵複製
+function copyVal() {
+
+	// 製作一個範圍
+	var copy_text = document.createElement("textarea");
+
+	// 加上值
+	copy_text.value = $(".HEX .value").text();
+
+	// 寫出並選取
+	document.body.appendChild(copy_text);
+    copy_text.focus();
+    copy_text.select();
+
+	// 複製到剪貼簿
+    document.execCommand("copy");
+
+	// 刪除範圍
+    document.body.removeChild(copy_text);
 
 }
