@@ -222,7 +222,7 @@ function chartChange(cmykC,val){
 
 		$(".chart-progress").eq(val).css({
 
-			"border-color": currentColor[0].colorHex,
+			"border-color": "#7F95E0",
 			"transform": "rotate(" + chart_val + "deg)"
 
 		});
