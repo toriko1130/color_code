@@ -123,8 +123,8 @@
     width: 80px;
     height: 32px;
     padding: 0px 12px;
-    background-color: #898989;
-    border: 1px solid #949494;
+    background-color: #00000066;
+    border: none;
     border-radius: 4px;
     color: #ffffff;
     font-size: 14px;
@@ -192,8 +192,8 @@
 	width: 120px;
 	height: 40px;
 	border-radius: 3px;
-	border:1px solid #80766e;
-	background-color:#80766e;
+	border:none;
+	background-color:#00000066;
     color:#ffffff;
 }
 
@@ -202,5 +202,7 @@
 }
 
 .other a{
-    color: #e9ddb6;
+    margin-left: 5px;
+    color: #ffeba9;
+    -webkit-filter:drop-shadow(0px 0px 1px #33333380);
 }

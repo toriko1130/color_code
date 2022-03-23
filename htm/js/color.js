@@ -182,21 +182,11 @@ function currentInfo(obj){
 	$(".rgb .value").eq(2).html(rgbB);
 
 
+	for (var i = 0; i < $(".chart-progress").length; i++) {
 
+		chartChange(cmyk_val[i],i);
 
-for (var i = 0; i < $(".chart-progress").length; i++) {
-
-chartChange(cmyk_val[i],i);
-
-console.log(i)
-
-
-}
-
-
-
-
-
+	}
 
 }
 
