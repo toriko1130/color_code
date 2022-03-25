@@ -44,6 +44,7 @@
     font-size: 10px;
     text-decoration: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     color: #ffffff;
 }
@@ -52,22 +53,32 @@
 .colors .info,
 .colors .number,
 .colors .name {
-    width: 100%;
-    padding-left: 5px;
-    display: block;
     font-weight: 100;
+    width: 100%;
+    padding-right: 5px;
+}
+
+.colors .info{
+    display: flex;
 }
 
 .colors .name {
     font-size: 16px;
     font-weight: bold;
     color: #7C3636;
+    padding: 0px;
+    justify-content: left;
+    order: -1;
+}
+
+.colors .number {
+    width: auto;
 }
 
 /*色票*/
 .color_code {
-    width: 80px;
-    height: 40px;
+    width: calc(100% - 10px);
+    height: 25px;
 }
 
 /*========================================顏色資訊==========================================*/
@@ -76,7 +87,7 @@
     padding: 20px;
     border-radius: 4px;
     margin-left: 15px;
-    background: rgba(255, 255, 255,0.45);
+    background: rgba(255, 255, 255,0.55);
 }
 
 /*顏色名*/
@@ -84,6 +95,7 @@
     font-size: 38px;
     font-weight: bold;
     margin-bottom: 25px;
+    color: #3d4041;
 }
 
 /*資訊區*/
@@ -150,7 +162,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    border: 3px solid #E0E0E0;
+    border: 3px solid #ffffff;
     border-radius: 50%;
     z-index: 1;
 }
@@ -232,15 +244,74 @@
         width: 100%;
     }
 
+    .colors {
+        width: calc(100% / 4);
+        margin-bottom: 20px;
+    }
+
+    .color_code {
+        width: calc(100% - 12px);
+    }
+
+    .colors .info, .colors .number, .colors .name {
+        padding-right: 6px;
+    }
+
+
 
 /*========================================顏色資訊==========================================*/
+
+    .color-name .name{
+        font-size:24px;
+        margin-bottom: 12px;
+    }
 
     .color_info {
         position: fixed;
         width: 100%;
         bottom: 0;
         margin: 0;
-        background-color: #ffffff;
+        background-color: #d1cfcf;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0px;
+    }
+
+    .rgb .value,.HEX .value{
+        min-width: 50px;
+        padding: 0 8px;
+        margin-right: 12px;
+    }
+
+    .HEX .value {
+        min-width: 100px;
+    }
+
+    .HEX button {
+        height: 40px;
+    }
+
+
+    /*資訊區*/
+    .cmyk, .rgb, .HEX, .active{
+        margin-bottom: 12px;
+    }
+    .cmyk {
+        width: 100%;
+    }
+    .active {
+        align-items: flex-end;
+    }
+
+    /*值*/
+    .value {
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .active button{
+        background-color:#9E2B34;
+
     }
 
 
@@ -248,7 +319,17 @@
 
 @media (max-width: 480px) {
 
+    .colors {
+        width: calc(100% / 3);
+    }
 
+    .active {
+        width: 100%;
+    }
+
+    .active button{
+        width: 100%;
+    }
 }
 
 @media (max-width: 320px) {}
