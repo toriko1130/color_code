@@ -7,10 +7,10 @@
     <meta name="description" content="中國傳統顏色，配色色名、CMYK值、RGB值、16進制表示。">
     <meta name="keywords" content="中國傳統色，配色參考">
     <title>中國傳統色</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="dist/package/bootstrap4/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="htm/css/color.css">
     <!--  -->
-
 </head>
 
 <body>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="active">
-                    <button type="button">配色</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#matching_modal">配色</button>
                 </div>
                 <div class="other">
                     <div class="copyright">Copyright © 2021 by 鳥居宿木 </div>
@@ -92,11 +92,344 @@
             </div>
         </div>
     </div>
+    <div class="modal" id="matching_modal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title colorHex">配色方案</div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="img_region">
+                        <img src="dist/img/iconfinder-icon.svg">
+                    </div>
+                    <div class="matching_region">
+                        <div class="matching">
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matching">
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="matching">
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="color_code"></div>
+                                <div class="info">
+                                    <div class="CMYK">
+                                        <span>C</span>
+                                        <div class="value">73</div>
+                                        <span>M</span>
+                                        <div class="value">73</div>
+                                        <span>Y</span>
+                                        <div class="value">73</div>
+                                        <span>k</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="RGB">
+                                        <span>R</span>
+                                        <div class="value">73</div>
+                                        <span>G</span>
+                                        <div class="value">73</div>
+                                        <span>B</span>
+                                        <div class="value">73</div>
+                                    </div>
+                                    <div class="hex">
+                                        <div class="value">#898989</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
-
 <script type="text/javascript" src="dist/js/jquery.3.3.1.min.js"></script>
-<script type="text/javascript" src="dist/package/bootstrap4/js/bootstrap.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="htm/js/color.js"></script>
 <script type="text/javascript" src="htm/js/color_val.json"></script>
 

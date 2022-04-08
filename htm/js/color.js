@@ -88,6 +88,8 @@ function currentInfo(obj){
 
 	// 替換顏色名字
 	$(".color_info .name").html(info_obj.colorName);
+	// modal文字
+	$(".colorHex").html(info_obj.colorName);
 	// 替換色碼
 	$(".color_info .HEX .value").html(info_obj.colorHex);
 	// 替換CMYK
